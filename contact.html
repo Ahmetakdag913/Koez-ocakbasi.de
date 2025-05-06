@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Kontakt</title>
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <style>
+         .back-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ffbf00;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            z-index: 1000; /* Geri tuşunun diğer öğelerin üstünde görünmesi için */
+         }
+
+         .back-button:hover {
+            background-color: #ffffff;
+            color: #ffbf00;
+         }
+      </style>
+   </head>
+   <body>
+      <!-- Geri tuşunu sağ üst köşeye ekledik -->
+      <button class="back-button" onclick="window.history.back()">zurück</button>
+      
+      <div class="header_section header_bg">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <a class="navbar-brand" href="index.html">
+                  <img width="164" height="36" src="images/guven_logo.png">
+               </a>
+            </nav>
+         </div>
+      </div>
+      <style>
+         /* Tüm yazıları siyah yapmak */
+         body, .container, .info-box, .contact-form, h2, h3, p, input, select, textarea, a {
+             color: black !important; /* Tüm metinlerin rengini siyah yapar */
+         }
+      
+         .info-box {
+             text-align: center; /* Yazıları yatayda ortalar */
+         }
+      </style>
+      
+      <div class="container">
+         <div class="info-box">
+            <h2>INFOS</h2>
+            <h3>ÖFFNUNGSZEITEN</h3>
+            <p>Wir freuen uns, Sie in unser Köz Ocakbaşı Barbecue House willkommen zu heißen.</p>
+            <p>Öffnungszeiten:<br> Täglich von 09:00 - 05:00 Uhr</p>
+            <p><a href="mailto:info@koez-ocakbasi.de">info@koez-ocakbasi.de</a></p>
+            <p class="link" onclick="scrollToForm()">ZUM KONTAKTFORMULAR</p>
+         </div>
+         <div class="contact-form" id="contactForm">
+            <h2>WIR FREUEN UNS AUF IHRE ANFRAGE</h2>
+            <form onsubmit="return submitForm()">
+               <label for="anrede">Anrede</label>
+               <select id="anrede">
+                  <option>Bitte auswählen</option>
+                  <option>Herr</option>
+                  <option>Frau</option>
+               </select>
+               <input type="text" id="vorname" placeholder="Vorname" required>
+               <input type="text" id="nachname" placeholder="Nachname" required>
+               <input type="email" id="email" placeholder="E-Mail" required>
+               <textarea id="anliegen" placeholder="Ihr Anliegen" required></textarea>
+               <p><input type="checkbox" required> Ich erkläre mich damit einverstanden, dass meine Daten elektronisch verarbeitet werden.</p>
+               <p>Kontakt: <a href="mailto:info@koez-ocakbasi.de">info@koez-ocakbasi.de</a></p>
+               <button type="submit" class="submit-btn">ABSENDEN</button>
+            </form>
+         </div>
+      </div>
+      
+      <script>
+         function submitForm() {
+             var anrede = document.getElementById("anrede").value;
+             var vorname = document.getElementById("vorname").value;
+             var nachname = document.getElementById("nachname").value;
+             var email = document.getElementById("email").value;
+             var anliegen = document.getElementById("anliegen").value;
+             
+             var mailtoLink = "mailto:info@koez-gueven.de?subject=Kontaktformular&body=" +
+                              "Anrede: " + anrede + "%0A" +
+                              "Vorname: " + vorname + "%0A" +
+                              "Nachname: " + nachname + "%0A" +
+                              "E-Mail: " + email + "%0A" +
+                              "Anliegen: " + anliegen;
+             
+             window.location.href = mailtoLink;
+             alert("Vielen Dank für Ihre Anfrage! Wir werden uns in Kürze bei Ihnen melden.");
+             return false;
+         }
+      
+         function scrollToForm() {
+            var formElement = document.getElementById("contactForm");
+            formElement.scrollIntoView({ behavior: "smooth" });
+         }
+      </script>
+      
+      
+      
+
+      <!-- footer section start -->
+      <div class="footer_section layout_padding margin_top90">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="footer_social_icon">
+                     <ul>
+                        <li><a href="https://www.facebook.com/pages/K%C3%B6z-Ocakba%C5%9F%C4%B1-Barbecue-House/165332560143537" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>           
+                        <li><a href="https://www.instagram.com/koez.ocakbasi?igsh=d2FlYzcwZnZqbWts&utm_source=qr" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                     </ul>
+                  </div>
+                  <div class="location_text">
+                     <ul>
+                        <li>
+                           <a href="#">
+                           <i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_10"><a href="tel:04024874515">04024874515</a></span>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                           <i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_10"><a href="mailto:info@koez-ocakbasi.de">info@koez-ocakbasi.de</a></span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- footer section end -->
+      <!-- copyright section start -->
+      <div class="copyright_section">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <p class="copyright_text"><a href="https://www.facebook.com/pages/K%C3%B6z-Ocakba%C5%9F%C4%B1-Barbecue-House/165332560143537">Köz Ocakbaşı</a>
+                     <a href="https://www.instagram.com/koez.ocakbasi?igsh=d2FlYzcwZnZqbWts&utm_source=qr">Barbecue House</a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html>
